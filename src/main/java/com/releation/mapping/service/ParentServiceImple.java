@@ -36,7 +36,7 @@ public class ParentServiceImple implements ParentService {
 	// Add Parent 
 	@Override
 	public ParentDTO addParent(ParentDTO parentDTO) {
-		logger.info("Add Parent with Name :: {}",parentDTO.getName());
+		logger.info("Adding Parent with Name.... :: {}",parentDTO.getName());
 		Parent parent = parentMapper.toParentEntity(parentDTO);
 		Parent savedParent = parentRepository.save(parent);
 		logger.info("{} :: Parent Successfully Add",savedParent.getName());

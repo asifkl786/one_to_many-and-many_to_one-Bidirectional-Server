@@ -41,7 +41,7 @@ public class ParentController {
 	// Build Add Parent REST API
 	@PostMapping("/add")
 	public ResponseEntity<ParentDTO> addParent(@RequestBody ParentDTO parentDTO){
-		logger.info("Recived Request to Add Parent With Name : {}",parentDTO.getName());
+		logger.info("Recived Request to Add Parent With Name :: {}",parentDTO.getName());
 		ParentDTO parent = parentService.addParent(parentDTO);
 		return new ResponseEntity<>(parent,HttpStatus.CREATED);
 	}
@@ -66,7 +66,7 @@ public class ParentController {
 	// Build Update Parent with child REST API
 	@PutMapping("/update/{id}")
 	public ResponseEntity<ParentDTO> updateParent(@PathVariable Long id, @RequestBody ParentDTO parentDTO){
-		logger.info("Recived Request to Update Parent with id :{} ",id);
+		logger.info("Recived Request to Update Parent with id :: {} ",id);
 		ParentDTO updatedParent = parentService.updateParent(id, parentDTO);
 		return new ResponseEntity<>(updatedParent,HttpStatus.OK);
 	}
